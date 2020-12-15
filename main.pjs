@@ -1,0 +1,41 @@
+var buttonPressed = 0;
+
+//Bakgrund
+fill(196, 196, 196);
+rect(-1, -1, 401, 401);
+
+//Konsol
+fill(158, 158, 158);
+rect(15, 250, 369, 150);
+fill(143, 143, 143);
+rect(15, 365, 369, 150);
+
+draw = function() {
+    fill(255, 0, 0); // start color
+
+    if (mouseIsPressed && mouseX > 167 && mouseX < 217 && mouseY > 287 && mouseY < 312) { 
+        fill(175, 0, 0); // click color
+        buttonPressed += 1;
+    }
+    
+    ellipse(192, 300, 50, 25);
+    
+};
+
+//Knapp
+fill(175, 0, 0);
+ellipse(192, 310, 50, 25);
+fill(255, 0, 0);
+ellipse(192, 300, 50, 25);
+line(167, 310, 167, 300);
+line(216, 310, 216, 300);
+
+if (buttonPressed > 0) {
+    draw = function() {
+    
+    fill(0, 0, 0);
+   textSize(30);
+   text("a", 100, 100); 
+};
+
+}
